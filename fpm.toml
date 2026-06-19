@@ -1,0 +1,40 @@
+name = "philox"
+version = "0.1.0"
+license = "license"
+author = "RJaBi"
+maintainer = "ryan07bignell+github@gmail.com"
+copyright = "Copyright 2026, RJaBi"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+[install]
+library = true
+test = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+
+# fortitude-lint
+[extra.fortitude.check]
+line-length = 132
+ignore = [
+       "MOD011",  # allows (/ /)
+       "MOD021",  # allows .gt.
+       "C132",    # allows default public accessiblility
+       "E001",    # ignores syntax errors - useful as pre-processor support is tough
+       "S241",    # allows strings with single quotes,
+       "C011",    # allows missing default in select case statements
+       ]
+preview = true
+#[extra.fortitude.check.per-file-ignores]
+## the c_wrapper gets parsed with f2py which can be a bit fussy
+#"c_wrapper/FLUE_c.f90" = [
+#    "C003", # 'implicit none' missing 'external'
+#    "C001", # 'implicit none' missing 'type'
+#    "C131", # module missing default accessibility statement
+#]
+[extra.fortitude.check.incorrect-keyword-case]
+keyword-case = "uppercase"

@@ -1,6 +1,6 @@
 name = "philox"
 version = "0.1.0"
-license = "license"
+license = "MIT"
 author = "RJaBi"
 maintainer = "ryan07bignell+github@gmail.com"
 copyright = "Copyright 2026, RJaBi"
@@ -29,12 +29,5 @@ ignore = [
        "C011",    # allows missing default in select case statements
        ]
 preview = true
-#[extra.fortitude.check.per-file-ignores]
-## the c_wrapper gets parsed with f2py which can be a bit fussy
-#"c_wrapper/FLUE_c.f90" = [
-#    "C003", # 'implicit none' missing 'external'
-#    "C001", # 'implicit none' missing 'type'
-#    "C131", # module missing default accessibility statement
-#]
 [extra.fortitude.check.incorrect-keyword-case]
 keyword-case = "uppercase"
